@@ -1,0 +1,26 @@
+<h1>Listing circles</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Alias</th>
+    <th>Mail</th>
+    <th>Description</th>
+  </tr>
+
+<% @circles.each do |circle| %>
+  <tr>
+    <td><%=h circle.name %></td>
+    <td><%=h circle.alias %></td>
+    <td><%=h circle.mail %></td>
+    <td><%=h circle.description %></td>
+    <td><%= link_to 'Show', {:action => "show", :alias => circle.alias} %></td>
+    <td><%= link_to 'Edit', {:action => "edit", :alias => circle.alias} %></td>
+    <td><%= link_to 'Destroy', circle, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New circle', new_circle_path %>

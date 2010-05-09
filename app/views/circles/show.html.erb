@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%=h @circle.name %>
+</p>
+
+<p>
+  <b>Alias:</b>
+  <%=h @circle.alias %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= image_tag(url_for_file_column("circle", :image)) unless @circle.image.blank? %>
+</p>
+
+<p>
+  <b>Mail:</b>
+  <%=h @circle.mail %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @circle.description %>
+</p>
+
+
+<%= link_to 'Edit', {:action => "edit", :alias => @circle.alias} %> |
+<%= link_to 'Back', circles_path %>
